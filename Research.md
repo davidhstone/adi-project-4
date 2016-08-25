@@ -49,4 +49,8 @@ RESEARCH PLAN
 USER SURVEY
  	
 <a href="https://goo.gl/forms/8jkmzIiJjQ70HyrU2">Link To User Survey</a>
+
+COMPETITIVE ANALYSIS
+
+<a href="https://docs.google.com/spreadsheets/d/1_M5roG0_YWnGFx3MEgvQrFeYtkOxrjm89vJL6r0j8jI/edit?usp=sharing">Link To Competitive Analysis</a>
  	
