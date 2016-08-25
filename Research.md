@@ -56,4 +56,4 @@ COMPETITIVE ANALYSIS
  	
 RESEARCH SUMMARY
 
-<a href="https://docs.google.com/document/d/1U7Zfj2mmQ4-2CRZtJctoIVOa9-SMUkd11nY1qXPSXZg/edit?usp=sharing>Link To Research Summmary</a>
+<a href="https://docs.google.com/document/d/1U7Zfj2mmQ4-2CRZtJctoIVOa9-SMUkd11nY1qXPSXZg/edit?usp=sharing">Link To Research Summmary</a>
