@@ -47,5 +47,6 @@ RESEARCH PLAN
 			 		If it could happen with the push of a button, would users want to know who's funding representatives of their own and other districts?
 
 USER SURVEY
- 
- 	link <markdown>[User Survey](https://goo.gl/forms/8jkmzIiJjQ70HyrU2)</markdown>
+ 	
+<a href="https://goo.gl/forms/8jkmzIiJjQ70HyrU2">Link To User Survey</a>
+ 	
