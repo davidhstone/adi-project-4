@@ -54,3 +54,6 @@ COMPETITIVE ANALYSIS
 
 <a href="https://docs.google.com/spreadsheets/d/1_M5roG0_YWnGFx3MEgvQrFeYtkOxrjm89vJL6r0j8jI/edit?usp=sharing">Link To Competitive Analysis</a>
  	
+RESEARCH SUMMARY
+
+<a href="https://docs.google.com/document/d/1U7Zfj2mmQ4-2CRZtJctoIVOa9-SMUkd11nY1qXPSXZg/edit?usp=sharing>Link To Research Summmary</a>
