@@ -61,3 +61,7 @@ RESEARCH SUMMARY
 USER PERSONAS
 
 <a href="https://docs.google.com/document/d/18rRDICAymEaFZZKUpyfLpcgBH21GoxF8xRvd7GtZWng/edit?usp=sharing">Link To User Personas</a>
+
+PROBLEM STATEMENT
+
+<a href="https://docs.google.com/document/d/1XS66KV4-iCmKuxes1iq3RCgI19gRobGtYetPC_h21Lo/edit?usp=sharing">Link To Problem Statement</a>
