@@ -70,7 +70,9 @@ FEATURE LIST
 
 <a href="https://docs.google.com/document/d/1VZbxEdyzCBiTWBZ2zZ0sXARbO3EELcDJR9LoRex_W9c/edit?usp=sharing">Link To Feature List</a>
 
-***NEED TO ADD USER STORIES***
+USER STORIES
+
+<a href="https://docs.google.com/document/d/1FEeusPQffAuhKAyS05FW-0qqmJZkzNOmDQMZztWzdPI/edit?usp=sharing">Link To User Stories</a>
 
 PROTOTYPES / WIREFRAMES
 
