@@ -57,3 +57,7 @@ COMPETITIVE ANALYSIS
 RESEARCH SUMMARY
 
 <a href="https://docs.google.com/document/d/1U7Zfj2mmQ4-2CRZtJctoIVOa9-SMUkd11nY1qXPSXZg/edit?usp=sharing">Link To Research Summmary</a>
+
+USER PERSONAS
+
+<a href="https://docs.google.com/document/d/18rRDICAymEaFZZKUpyfLpcgBH21GoxF8xRvd7GtZWng/edit?usp=sharing">Link To User Personas</a>
