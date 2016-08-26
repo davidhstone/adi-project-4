@@ -69,3 +69,7 @@ PROBLEM STATEMENT
 FEATURE LIST
 
 <a href="https://docs.google.com/document/d/1VZbxEdyzCBiTWBZ2zZ0sXARbO3EELcDJR9LoRex_W9c/edit?usp=sharing">Link To Feature List</a>
+
+***NEED TO ADD USER STORIES***
+
+***NEED TO ADD WIREFRAMES***
