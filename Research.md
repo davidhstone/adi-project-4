@@ -65,3 +65,7 @@ USER PERSONAS
 PROBLEM STATEMENT
 
 <a href="https://docs.google.com/document/d/1XS66KV4-iCmKuxes1iq3RCgI19gRobGtYetPC_h21Lo/edit?usp=sharing">Link To Problem Statement</a>
+
+FEATURE LIST
+
+<a href="https://docs.google.com/document/d/1VZbxEdyzCBiTWBZ2zZ0sXARbO3EELcDJR9LoRex_W9c/edit?usp=sharing">Link To Feature List</a>
