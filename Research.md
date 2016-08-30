@@ -14,7 +14,7 @@ RESEARCH PLAN
 					A couple criticisms of them, often self-directed, are: 
 						a) they often get their facts wrong
 						b) they often comment about the goings on in areas they don't know much about
-						c) they either lack the time to do research, or they don't know how to do research
+						c) they either lack the time to do research, or they don't know how to do research.
 					In the internet and smartphone age, people are said to have the ability to access a broad swath of human knowledge, with a couple simple search terms input into their browsers. Even so, the ability to synthsize data resulting from a few seperate searches into a new context seems to often be inhibitory. People want to talk about and apply their political opinions, but those opinions aren't worth much if they're not based in facts. There's seems to be a lack of knowledge in these debates about details; although people seem to have opinions on their local politics, it seems that most people know only the name and party affilition of their local congressional reps, and know nothing about the reps of other districs. There also seems to be growing common belief that party affiliation matters less than who it is that's putting a rep in office in terms of campaign contributions and lobbies. If there were a simple app that related a district's current rep to their top campaign contributors and/or local lobbying muscle, it would likely lessen the need to do research and contribute to the quality of info people are sharing online, and is affecting their choices of how to cast their votes and spend their money.
 
 5. Goals - to determine what info about a congressional district users would like to easily look up
@@ -45,3 +45,37 @@ RESEARCH PLAN
 			 		What are blockers to knowing others' reps and who's funding them?
 			 5. Curiousity about one's own and other districts
 			 		If it could happen with the push of a button, would users want to know who's funding representatives of their own and other districts?
+
+USER SURVEY
+ 	
+<a href="https://goo.gl/forms/8jkmzIiJjQ70HyrU2">Link To User Survey</a>
+
+COMPETITIVE ANALYSIS
+
+<a href="https://docs.google.com/spreadsheets/d/1_M5roG0_YWnGFx3MEgvQrFeYtkOxrjm89vJL6r0j8jI/edit?usp=sharing">Link To Competitive Analysis</a>
+ 	
+RESEARCH SUMMARY
+
+<a href="https://docs.google.com/document/d/1U7Zfj2mmQ4-2CRZtJctoIVOa9-SMUkd11nY1qXPSXZg/edit?usp=sharing">Link To Research Summmary</a>
+
+USER PERSONAS
+
+<a href="https://docs.google.com/document/d/18rRDICAymEaFZZKUpyfLpcgBH21GoxF8xRvd7GtZWng/edit?usp=sharing">Link To User Personas</a>
+
+PROBLEM STATEMENT
+
+<a href="https://docs.google.com/document/d/1XS66KV4-iCmKuxes1iq3RCgI19gRobGtYetPC_h21Lo/edit?usp=sharing">Link To Problem Statement</a>
+
+FEATURE LIST
+
+<a href="https://docs.google.com/document/d/1VZbxEdyzCBiTWBZ2zZ0sXARbO3EELcDJR9LoRex_W9c/edit?usp=sharing">Link To Feature List</a>
+
+USER STORIES
+
+<a href="https://docs.google.com/document/d/1FEeusPQffAuhKAyS05FW-0qqmJZkzNOmDQMZztWzdPI/edit?usp=sharing">Link To User Stories</a>
+
+PROTOTYPES / WIREFRAMES
+
+<a href="https://drive.google.com/open?id=0B-HEayMIs6fXTjRSekJtcW1xLTg">Link To WireFrames</a>
+
+***NAME THE APP AND FINISH THE PRESENTATION***
