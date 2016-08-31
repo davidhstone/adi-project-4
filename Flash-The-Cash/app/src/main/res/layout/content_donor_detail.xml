@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.davidstone.flash_the_cash.DonorDetailActivity"
+    tools:showIn="@layout/activity_donor_detail">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/flag_dollar_capitol_pic_background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:scaleType="centerCrop"
+            android:padding="0dp"
+            android:layout_margin="0dp"
+            android:src="@drawable/american_flag_dollar_bill_capitol"
+            android:alpha=".25"/>
+
+        <TextView
+            android:id="@+id/district_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/activity_vertical_margin_top"
+            android:textSize="@dimen/font_district"
+            android:text="VA District 8"/>
+
+        <TextView
+            android:id="@+id/industry_top_donors"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/district_name"
+            android:textSize="@dimen/font_industry"
+            android:text="Top Donors Industry"/>
+
+        <TextView
+            android:id="@+id/rep_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/industry_top_donors"
+            android:textSize="@dimen/font_industry"
+            android:text="Pauly McPolitician"/>
+
+        <TextView
+            android:id="@+id/party_affiliation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/rep_name"
+            android:textSize="@dimen/font_industry"
+            android:text="Republicrat"/>
+
+
+    </FrameLayout>
+
+
+
+
+
+
+</LinearLayout>
+
+
+

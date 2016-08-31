@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.davidstone.flash_the_cash.DistrictActivity"
+    tools:showIn="@layout/activity_district">
+
+    <ImageView
+        android:id="@+id/flag_dollar_capitol_pic_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:scaleType="centerCrop"
+        android:padding="0dp"
+        android:layout_margin="0dp"
+        android:src="@drawable/american_flag_dollar_bill_capitol"
+        android:alpha=".25"/>
+
+    <TextView
+        android:id="@+id/district_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/activity_vertical_margin_top"
+        android:textSize="@dimen/font_district"
+        android:text="VA District 8"/>
+
+    <TextView
+        android:id="@+id/industry_top_donors"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/district_name"
+        android:textSize="@dimen/font_industry"
+        android:text="Top Donors Industry"/>
+
+    <TextView
+        android:id="@+id/rep_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/industry_top_donors"
+        android:textSize="@dimen/font_industry"
+        android:text="Pauly McPolitician"/>
+
+    <TextView
+        android:id="@+id/party_affiliation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/rep_name"
+        android:textSize="@dimen/font_industry"
+        android:text="Republicrat"/>
+
+    <Button
+        android:id="@+id/share_button"
+        android:layout_width="wrap_content"
+        android:layout_height="72dp"
+        android:layout_margin="8dp"
+        android:layout_above="@id/address_edittext"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="@color/colorAccent"
+        android:text="Share Your Findings!"
+        android:textSize="20sp"/>
+
+    <EditText
+        android:id="@+id/address_edittext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24dp"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
+        android:hint="enter new address here"
+        android:paddingTop="8dp"
+        android:layout_above="@id/district_click_button_textview"
+         />
+
+    <TextView
+        android:id="@+id/district_click_button_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="click the $ button to see another district's info"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/activity_vertical_margin_bottom"
+        android:textAlignment="center"
+        android:textSize="16dp"
+        />
+
+
+</RelativeLayout>
+
+
+
