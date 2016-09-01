@@ -18,15 +18,26 @@
         android:src="@drawable/american_flag_dollar_bill_capitol"/>
 
     <EditText
-        android:id="@+id/address_edittext"
+        android:id="@+id/street_address_edittext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="24dp"
+        android:textSize="16dp"
         android:layout_centerHorizontal="true"
         android:textAlignment="center"
-        android:hint="enter address here"
+        android:hint="enter street address here"
         android:paddingTop="8dp"
         android:layout_below="@+id/flag_dollar_capitol_pic" />
+
+    <EditText
+        android:id="@+id/zipcode_edittext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16dp"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
+        android:hint="enter zip code here"
+        android:paddingTop="0dp"
+        android:layout_below="@+id/street_address_edittext" />
 
     <TextView
         android:id="@+id/click_button_textview"
@@ -35,7 +46,7 @@
         android:text="click the $ button to see district info"
         android:textAlignment="center"
         android:textSize="16dp"
-        android:layout_below="@id/address_edittext"/>
+        android:layout_below="@id/zipcode_edittext"/>
 
 
 </RelativeLayout>

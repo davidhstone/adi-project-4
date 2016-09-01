@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -61,23 +62,37 @@
         android:layout_width="wrap_content"
         android:layout_height="72dp"
         android:layout_margin="8dp"
-        android:layout_above="@id/address_edittext"
+        android:layout_above="@+id/district_street_address_edittext"
         android:layout_centerHorizontal="true"
         android:backgroundTint="@color/colorAccent"
         android:text="Share Your Findings!"
         android:textSize="20sp"/>
 
     <EditText
-        android:id="@+id/address_edittext"
+        android:id="@+id/district_street_address_edittext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="24dp"
+        android:textSize="16dp"
         android:layout_centerHorizontal="true"
         android:textAlignment="center"
-        android:hint="enter new address here"
+        android:hint="enter street address here"
         android:paddingTop="8dp"
-        android:layout_above="@id/district_click_button_textview"
-         />
+        android:layout_below="@+id/flag_dollar_capitol_pic"
+        android:layout_above="@+id/district_zipcode_edittext"
+        />
+
+    <EditText
+        android:id="@+id/district_zipcode_edittext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16dp"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
+        android:hint="enter zipcode here"
+        android:paddingTop="8dp"
+
+        android:layout_above="@+id/district_click_button_textview"
+        />
 
     <TextView
         android:id="@+id/district_click_button_textview"
