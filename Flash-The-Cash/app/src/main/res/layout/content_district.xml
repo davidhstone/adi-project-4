@@ -31,20 +31,11 @@
         android:text="VA District 8"/>
 
     <TextView
-        android:id="@+id/industry_top_donors"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/district_name"
-        android:textSize="@dimen/font_industry"
-        android:text="Top Donors Industry"/>
-
-    <TextView
         android:id="@+id/rep_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/industry_top_donors"
+        android:layout_below="@id/district_name"
         android:textSize="@dimen/font_industry"
         android:text="Pauly McPolitician"/>
 
@@ -56,6 +47,25 @@
         android:layout_below="@id/rep_name"
         android:textSize="@dimen/font_industry"
         android:text="Republicrat"/>
+
+    <TextView
+        android:id="@+id/industry_top_donors"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/party_affiliation"
+        android:textSize="@dimen/font_industry"
+        android:text="Industry Top Donors"/>
+
+    <TextView
+        android:id="@+id/long_click_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/industry_top_donors"
+        android:textSize="16dp"
+        android:text="click and hold top donors for more info"
+        />
 
     <Button
         android:id="@+id/share_button"
@@ -75,7 +85,7 @@
         android:textSize="16dp"
         android:layout_centerHorizontal="true"
         android:textAlignment="center"
-        android:hint="enter street address here"
+        android:hint="enter new street address here"
         android:paddingTop="8dp"
         android:layout_below="@+id/flag_dollar_capitol_pic"
         android:layout_above="@+id/district_zipcode_edittext"
@@ -88,7 +98,7 @@
         android:textSize="16dp"
         android:layout_centerHorizontal="true"
         android:textAlignment="center"
-        android:hint="enter zipcode here"
+        android:hint="enter new zipcode here"
         android:paddingTop="8dp"
 
         android:layout_above="@+id/district_click_button_textview"
