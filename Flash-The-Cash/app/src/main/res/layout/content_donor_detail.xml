@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_below="@id/district_name"
-            android:textSize="@dimen/font_industry"
+            android:textSize="@dimen/font_sector"
             android:text="Top Donors Industry"/>
 
         <TextView
@@ -49,17 +49,9 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_below="@id/industry_top_donors"
-            android:textSize="@dimen/font_industry"
+            android:textSize="@dimen/font_rep"
             android:text="Pauly McPolitician"/>
 
-        <TextView
-            android:id="@+id/party_affiliation"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@id/rep_name"
-            android:textSize="@dimen/font_industry"
-            android:text="Republicrat"/>
 
 
     </FrameLayout>

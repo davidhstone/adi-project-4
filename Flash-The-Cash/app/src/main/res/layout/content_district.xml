@@ -18,8 +18,9 @@
         android:scaleType="centerCrop"
         android:padding="0dp"
         android:layout_margin="0dp"
+        android:alpha=".25"
         android:src="@drawable/american_flag_dollar_bill_capitol"
-        android:alpha=".25"/>
+        />
 
     <TextView
         android:id="@+id/app_logo"
@@ -29,6 +30,32 @@
         android:layout_marginTop="@dimen/activity_vertical_margin_top"
         android:textSize="@dimen/font_district"
         android:text="FLASH THE CASH"/>
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/swipe_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/district_recycler_view"
+                android:scrollbars="vertical"
+                android:layout_width="350dp"
+                android:layout_height="352dp"
+                android:elevation="4dp"
+
+                app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+        </LinearLayout>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+
 
 
 

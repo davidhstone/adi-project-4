@@ -4,13 +4,15 @@
     <dimen name="activity_vertical_margin_bottom">64dp</dimen>
     <dimen name="activity_vertical_margin_top">24dp</dimen>
 
-    <dimen name="activity_vertical_district_cardview_top">40dp</dimen>
+    <dimen name="activity_vertical_district_recyclerview_top">104dp</dimen>
 
     <dimen name="share_button_width">16dp</dimen>
     <dimen name="fab_margin">0dp</dimen>
     <dimen name="appbar_padding_top">0dp</dimen>
 
-    <dimen name="font_district">40dp</dimen>
-    <dimen name="font_industry">30dp</dimen>
+    <dimen name="font_rep">32dp</dimen>
+    <dimen name="font_district">32dp</dimen>
+    <dimen name="font_sector">24dp</dimen>
+    <dimen name="font_total_donations">24dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
 </resources>

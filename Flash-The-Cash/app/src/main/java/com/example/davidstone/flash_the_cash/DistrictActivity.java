@@ -38,10 +38,10 @@ public class DistrictActivity extends AppCompatActivity implements DistrictCardA
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         mArrayList = new ArrayList<>();
-        mArrayList.add(new DistrictObject("Don Beyer (D)", "VA08", "Top Donor Sector: Agribusiness", "$25,000"));
-        mArrayList.add(new DistrictObject("Don Beyer (D)", "VA08", "Top Donor Sector: Defense", "$23,500"));
-        mArrayList.add(new DistrictObject("Don Beyer (D)", "VA08", "Top Donor Sector: Public Unionse", "$21,000"));
-        mArrayList.add(new DistrictObject("Vermin Supreme (I)", "US#1", "Top Donor Sector: Ponies", "$4985745,000"));
+        mArrayList.add(new DistrictObject("Don Beyer (D)", "VA08", "Top Sector: Agribusiness", "$25,000"));
+        mArrayList.add(new DistrictObject("Don Beyer (D)", "VA08", "Top Sector: Defense", "$23,500"));
+        mArrayList.add(new DistrictObject("Don Beyer (D)", "VA08", "Top Sector: Public Unionse", "$21,000"));
+        mArrayList.add(new DistrictObject("Vermin Supreme (I)", "US#1", "Top Sector: Ponies", "$4985745,000"));
 
         ArrayList<DistrictObject> districtObjects = new ArrayList<>();
         Collections.fill(districtObjects, new DistrictObject());

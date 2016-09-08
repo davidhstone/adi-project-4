@@ -7,13 +7,13 @@
         android:id="@+id/district_card_view"
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
 
-        android:layout_marginTop="@dimen/activity_vertical_district_cardview_top"
+        android:layout_marginTop="@dimen/activity_vertical_district_recyclerview_top"
 
         card_view:cardCornerRadius="4dp"
         card_view:cardElevation="8dp"
-        card_view:cardBackgroundColor="@color/colorBackground">
+        card_view:cardBackgroundColor="@color/colorPrimary">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -21,11 +21,11 @@
 
             <TextView
                 android:id="@+id/rep_name"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
 
-                android:textSize="@dimen/font_industry"
+                android:textSize="@dimen/font_rep"
                 />
 
             <TextView
@@ -34,7 +34,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_below="@id/rep_name"
-                android:textSize="@dimen/font_industry"
+                android:textSize="@dimen/font_district"
                 android:text="Office Held"/>
 
 
@@ -44,7 +44,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_below="@id/office_held"
-                android:textSize="@dimen/font_industry"
+                android:textSize="@dimen/font_sector"
                 android:text="Donor Sector 1"/>
 
             <TextView
@@ -53,14 +53,14 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_below="@id/sector_top_donors"
-                android:textSize="24dp"
+                android:textSize="@dimen/font_total_donations"
                 android:text="total donated"
                 />
 
             <Button
                 android:id="@+id/district_share_button"
                 android:layout_width="wrap_content"
-                android:layout_height="72dp"
+                android:layout_height="64dp"
                 android:layout_margin="8dp"
                 android:layout_centerHorizontal="true"
                 android:layout_below="@id/total_sector_donations"
