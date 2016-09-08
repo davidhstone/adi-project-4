@@ -3,9 +3,9 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.davidstone.flash_the_cash.DistrictActivity"
     tools:showIn="@layout/activity_district">
@@ -22,61 +22,15 @@
         android:alpha=".25"/>
 
     <TextView
-        android:id="@+id/district_name"
+        android:id="@+id/app_logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="@dimen/activity_vertical_margin_top"
         android:textSize="@dimen/font_district"
-        android:text="VA District 8"/>
+        android:text="FLASH THE CASH"/>
 
-    <TextView
-        android:id="@+id/rep_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/district_name"
-        android:textSize="@dimen/font_industry"
-        android:text="Pauly McPolitician"/>
 
-    <TextView
-        android:id="@+id/party_affiliation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/rep_name"
-        android:textSize="@dimen/font_industry"
-        android:text="Republicrat"/>
-
-    <TextView
-        android:id="@+id/industry_top_donors"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/party_affiliation"
-        android:textSize="@dimen/font_industry"
-        android:text="Industry Top Donors"/>
-
-    <TextView
-        android:id="@+id/long_click_textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/industry_top_donors"
-        android:textSize="16dp"
-        android:text="click and hold top donors for more info"
-        />
-
-    <Button
-        android:id="@+id/share_button"
-        android:layout_width="wrap_content"
-        android:layout_height="72dp"
-        android:layout_margin="8dp"
-        android:layout_above="@+id/district_street_address_edittext"
-        android:layout_centerHorizontal="true"
-        android:backgroundTint="@color/colorAccent"
-        android:text="Share Your Findings!"
-        android:textSize="20sp"/>
 
     <EditText
         android:id="@+id/district_street_address_edittext"
