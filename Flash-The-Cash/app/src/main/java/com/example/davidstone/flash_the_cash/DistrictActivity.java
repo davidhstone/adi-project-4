@@ -64,11 +64,13 @@ public class DistrictActivity extends AppCompatActivity implements DistrictCardA
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent intent = new Intent(DistrictActivity.this, DistrictActivity.class);
+                startActivity(intent);
+                finish();
+
             }
         });
-       // getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
     }
 
     @Override
