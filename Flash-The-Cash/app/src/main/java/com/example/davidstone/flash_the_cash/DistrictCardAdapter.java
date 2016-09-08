@@ -1,5 +1,7 @@
 package com.example.davidstone.flash_the_cash;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +16,8 @@ import java.util.ArrayList;
 public class DistrictCardAdapter extends RecyclerView.Adapter<DistrictCardViewHolder>
         implements ItemTouchHelperCallback.ItemTouchHelperAdapter {
 
+    private Context context;
+
     private static final String TAG = "DistrictCardAdapter";
 
     private ArrayList<DistrictObject> mDistrictObjectsList;
@@ -21,7 +25,8 @@ public class DistrictCardAdapter extends RecyclerView.Adapter<DistrictCardViewHo
     private ItemSelectListener mItemSelectListener;
     private ItemDismissListener mItemDismissListener;
 
-    public DistrictCardAdapter(ArrayList<DistrictObject> districtObjectList){
+    public DistrictCardAdapter(Context c, ArrayList<DistrictObject> districtObjectList){
+        context = c;
         mDistrictObjectsList = districtObjectList;
     }
 
@@ -42,20 +47,30 @@ public class DistrictCardAdapter extends RecyclerView.Adapter<DistrictCardViewHo
         holder.mSectorTopDonor.setText(mDistrictObjectsList.get(i).mTopDonorSector);
         holder.mTotalSectorDonations.setText(mDistrictObjectsList.get(i).mTotalSectorDonations);
 
-        View.OnClickListener onClickListener = new View.OnClickListener() {
+        holder.mDistrictShareButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                switch (view.getId()){
-                    case R.id.district_share_button:
-                        Toast.makeText(view.getContext(), "You clicked the share button", Toast.LENGTH_SHORT).show();
-                        break;
-                    default:
-                        Toast.makeText(view.getContext(), "You clicked row " + i, Toast.LENGTH_SHORT).show();
-                }
+                Intent sendIntent = new Intent(Intent.ACTION_SEND);
+                sendIntent.setType("text/plain");
+                sendIntent.putExtra(Intent.EXTRA_TEXT, "TEST SHARE");
+                //sendIntent.putExtra(Intent.EXTRA_TEXT, mBusiness.url());
+                context.startActivity(Intent.createChooser(sendIntent, "How do you want to share?"));
             }
-        };
+        });
 
-        holder.mDistrictShareButton.setOnClickListener(onClickListener);
+       //View.OnClickListener onClickListener = new View.OnClickListener() {
+       //    @Override
+       //    public void onClick(View view) {
+       //        Intent sendIntent = new Intent(Intent.ACTION_SEND);
+       //        sendIntent.setType("text/plain");
+       //        sendIntent.putExtra(Intent.EXTRA_TEXT, "TEST SHARE");
+       //        //sendIntent.putExtra(Intent.EXTRA_TEXT, mBusiness.url());
+       //        //startActivity(Intent.createChooser(sendIntent, "How do you want to share?"));
+       //
+       //    }
+       //};
+
+       //holder.mDistrictShareButton.setOnClickListener(onClickListener);
     }
 
     @Override

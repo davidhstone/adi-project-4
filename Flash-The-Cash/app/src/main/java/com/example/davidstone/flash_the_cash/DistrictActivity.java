@@ -10,6 +10,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -24,6 +25,7 @@ public class DistrictActivity extends AppCompatActivity implements DistrictCardA
     private RecyclerView.Adapter mAdapter123;
     private RecyclerView.LayoutManager mLayoutManager;
     ArrayList<DistrictObject> mArrayList;
+
 
     int onStarted = 0;
 
@@ -47,7 +49,7 @@ public class DistrictActivity extends AppCompatActivity implements DistrictCardA
         Collections.fill(districtObjects, new DistrictObject());
 
         //mAdapter = new DistrictCardAdapter(districtObjects);
-        mAdapter = new DistrictCardAdapter(mArrayList);
+        mAdapter = new DistrictCardAdapter(this, mArrayList);
 
 
         mRecyclerView = (RecyclerView) findViewById(R.id.district_recycler_view);
@@ -60,6 +62,8 @@ public class DistrictActivity extends AppCompatActivity implements DistrictCardA
        // mRecyclerView.setAdapter(new DistrictCardAdapter(districtObjects));
         mRecyclerView.setAdapter(mAdapter);
 
+
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,6 +74,7 @@ public class DistrictActivity extends AppCompatActivity implements DistrictCardA
 
             }
         });
+
 
     }
 
