@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Flash the Cash</string>
     <string name="action_settings">Settings</string>
+
     <string name="title_activity_district">DistrictActivity</string>
     <string name="title_activity_donor_detail">DonorDetailActivity</string>
 </resources>
