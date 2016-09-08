@@ -14,14 +14,14 @@
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
-        android:layout_width="76dp"
-        android:layout_height="76dp"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
         android:layout_gravity="bottom|center"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_margin="@dimen/fab_margin"
         android:src="@drawable/ic_attach_money_black_24dp1"
-        android:elevation="40dp"/>
+        android:elevation="8dp"/>
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar"
