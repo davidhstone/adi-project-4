@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.davidstone.flash_the_cash">
+    package="com.undercurrentrecs.davidhstone.flash_the_cash">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name="com.undercurrentrecs.davidhstone.flash_the_cash.MainActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
@@ -23,24 +23,24 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".DistrictActivity"
+            android:name="com.undercurrentrecs.davidhstone.flash_the_cash.DistrictActivity"
             android:label="@string/title_activity_district"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName="com.undercurrentrecs.davidhstone.flash_the_cash.MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.davidstone.flash_the_cash.MainActivity" />
+                android:value="com.undercurrentrecs.davidhstone.flash_the_cash.MainActivity" />
         </activity>
         <activity
-            android:name=".DonorDetailActivity"
+            android:name="com.undercurrentrecs.davidhstone.flash_the_cash.DonorDetailActivity"
             android:label="@string/title_activity_donor_detail"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName="com.undercurrentrecs.davidhstone.flash_the_cash.MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.davidstone.flash_the_cash.MainActivity" />
+                android:value="com.undercurrentrecs.davidhstone.flash_the_cash.MainActivity" />
         </activity>
     </application>
 

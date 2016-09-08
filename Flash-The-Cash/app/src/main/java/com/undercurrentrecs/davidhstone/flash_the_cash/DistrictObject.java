@@ -1,9 +1,9 @@
-package com.example.davidstone.flash_the_cash;
+package com.undercurrentrecs.davidhstone.flash_the_cash;
 
 import java.util.ArrayList;
 
 /**
- * Created by davidstone on 9/7/16.
+ * Created by davidhstone on 9/7/16.
  */
 public class DistrictObject {
 

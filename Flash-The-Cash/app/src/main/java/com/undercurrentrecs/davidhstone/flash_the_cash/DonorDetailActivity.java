@@ -1,4 +1,4 @@
-package com.example.davidstone.flash_the_cash;
+package com.undercurrentrecs.davidhstone.flash_the_cash;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;

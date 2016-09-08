@@ -1,10 +1,10 @@
-package com.example.davidstone.flash_the_cash;
+package com.undercurrentrecs.davidhstone.flash_the_cash;
 
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
 
 /**
- * Created by davidstone on 9/7/16.
+ * Created by davidhstone on 9/7/16.
  */
 public class ItemTouchHelperCallback extends ItemTouchHelper.Callback {
 

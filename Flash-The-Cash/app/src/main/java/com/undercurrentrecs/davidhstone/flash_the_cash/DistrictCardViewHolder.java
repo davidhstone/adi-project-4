@@ -1,4 +1,4 @@
-package com.example.davidstone.flash_the_cash;
+package com.undercurrentrecs.davidhstone.flash_the_cash;
 
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -6,10 +6,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.davidstone.flash_the_cash.R;
-
 /**
- * Created by davidstone on 9/7/16.
+ * Created by davidhstone on 9/7/16.
  */
 public class DistrictCardViewHolder extends RecyclerView.ViewHolder {
 

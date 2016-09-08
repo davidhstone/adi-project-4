@@ -1,4 +1,4 @@
-package com.example.davidstone.flash_the_cash;
+package com.undercurrentrecs.davidhstone.flash_the_cash;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
