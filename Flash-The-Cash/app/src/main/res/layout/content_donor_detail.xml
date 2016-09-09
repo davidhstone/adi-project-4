@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -10,9 +10,6 @@
     tools:context="com.undercurrentrecs.davidhstone.donor_dough.DonorDetailActivity"
     tools:showIn="@layout/activity_donor_detail">
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
         <ImageView
             android:id="@+id/flag_dollar_capitol_pic_background"
@@ -25,43 +22,43 @@
             android:src="@drawable/american_flag_dollar_bill_capitol"
             android:alpha=".25"/>
 
-        <TextView
-            android:id="@+id/district_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="@dimen/activity_vertical_margin_top"
-            android:textSize="@dimen/font_district"
-            android:text="VA District 8"/>
+    <TextView
+        android:id="@+id/app_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/activity_vertical_margin_top"
+        android:textSize="@dimen/font_district"
+        android:text="FLASH THE CASH"/>
 
-        <TextView
-            android:id="@+id/industry_top_donors"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@id/district_name"
-            android:textSize="@dimen/font_sector"
-            android:text="Top Donors Industry"/>
+    <android.support.v4.widget.SwipeRefreshLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/swipe_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/rep_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@id/industry_top_donors"
-            android:textSize="@dimen/font_rep"
-            android:text="Pauly McPolitician"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/district_recycler_view"
+                android:scrollbars="vertical"
+                android:layout_width="350dp"
+                android:layout_height="360dp"
+                android:elevation="4dp"
+
+                app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+        </LinearLayout>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
 
 
 
-    </FrameLayout>
-
-
-
-
-
-
-</LinearLayout>
+</RelativeLayout>
 
 
 

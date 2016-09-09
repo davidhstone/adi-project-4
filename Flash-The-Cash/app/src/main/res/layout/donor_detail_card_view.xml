@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+    <android.support.v7.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/donor_card_view"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_vertical_district_recyclerview_top"
+        android:longClickable="true"
+
+        card_view:cardCornerRadius="4dp"
+        card_view:cardElevation="8dp"
+        card_view:cardBackgroundColor="@color/colorBackground">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/industry_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:paddingTop="16dp"
+                android:textSize="@dimen/font_rep"
+                />
+
+
+            <TextView
+                android:id="@+id/industry_top_donors"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/industry_name"
+                android:textSize="@dimen/font_sector"
+                android:text="Donor Industry 1"/>
+
+            <TextView
+                android:id="@+id/total_industry_donations"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/industry_top_donors"
+                android:textSize="@dimen/font_total_donations"
+                android:text="total donated"
+                />
+
+            <Button
+                android:id="@+id/donor_share_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/total_industry_donations"
+                android:backgroundTint="@color/colorAccent"
+                android:text="Share Your Findings!"
+                android:textSize="20sp"/>
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+
+

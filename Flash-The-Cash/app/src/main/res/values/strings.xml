@@ -4,4 +4,6 @@
 
     <string name="title_activity_district">DistrictActivity</string>
     <string name="title_activity_donor_detail">DonorDetailActivity</string>
+
+    <string name="industry_submit_button">Click for top donor industries!</string>
 </resources>

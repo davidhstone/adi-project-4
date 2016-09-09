@@ -56,8 +56,14 @@
 
     </android.support.v4.widget.SwipeRefreshLayout>
 
-
-
+    <Button
+        android:id="@+id/get_industry_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/industry_submit_button"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/district_street_address_edittext"
+        android:backgroundTint="@color/colorAccent"/>
 
     <EditText
         android:id="@+id/district_street_address_edittext"
