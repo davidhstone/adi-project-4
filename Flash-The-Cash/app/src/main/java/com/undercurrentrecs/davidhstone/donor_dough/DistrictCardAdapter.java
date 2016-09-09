@@ -1,4 +1,4 @@
-package com.undercurrentrecs.davidhstone.flash_the_cash;
+package com.undercurrentrecs.davidhstone.donor_dough;
 
 import android.content.Context;
 import android.content.Intent;
@@ -24,27 +24,32 @@ public class DistrictCardAdapter extends RecyclerView.Adapter<DistrictCardViewHo
     private ItemSelectListener mItemSelectListener;
     private ItemDismissListener mItemDismissListener;
 
+
     public DistrictCardAdapter(Context c, ArrayList<DistrictObject> districtObjectList){
         context = c;
         mDistrictObjectsList = districtObjectList;
     }
 
     @Override
-    public DistrictCardViewHolder onCreateViewHolder(ViewGroup parent, int i) {
+    public DistrictCardViewHolder onCreateViewHolder(ViewGroup parent, int position) {
+
         mItemSelectListener = (ItemSelectListener) parent.getContext();
         mItemDismissListener = (ItemDismissListener) parent.getContext();
+
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.district_card_view, parent, false);
         DistrictCardViewHolder districtViewHolder = new DistrictCardViewHolder(itemView);
         return districtViewHolder;
+
+
     }
 
     @Override
-    public void onBindViewHolder(DistrictCardViewHolder holder, final int i) {
+    public void onBindViewHolder(DistrictCardViewHolder holder, final int position) {
 
-        holder.mRepName.setText(mDistrictObjectsList.get(i).mRepresentative);
-        holder.mOffice.setText(mDistrictObjectsList.get(i).mOffice);
-        holder.mSectorTopDonor.setText(mDistrictObjectsList.get(i).mTopDonorSector);
-        holder.mTotalSectorDonations.setText(mDistrictObjectsList.get(i).mTotalSectorDonations);
+        holder.mRepName.setText(mDistrictObjectsList.get(position).mRepresentative);
+        holder.mOffice.setText(mDistrictObjectsList.get(position).mOffice);
+        holder.mSectorTopDonor.setText(mDistrictObjectsList.get(position).mTopDonorSector);
+        holder.mTotalSectorDonations.setText(mDistrictObjectsList.get(position).mTotalSectorDonations);
 
         holder.mDistrictShareButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,25 +62,12 @@ public class DistrictCardAdapter extends RecyclerView.Adapter<DistrictCardViewHo
             }
         });
 
-       //View.OnClickListener onClickListener = new View.OnClickListener() {
-       //    @Override
-       //    public void onClick(View view) {
-       //        Intent sendIntent = new Intent(Intent.ACTION_SEND);
-       //        sendIntent.setType("text/plain");
-       //        sendIntent.putExtra(Intent.EXTRA_TEXT, "TEST SHARE");
-       //        //sendIntent.putExtra(Intent.EXTRA_TEXT, mBusiness.url());
-       //        //startActivity(Intent.createChooser(sendIntent, "How do you want to share?"));
-       //
-       //    }
-       //};
-
-       //holder.mDistrictShareButton.setOnClickListener(onClickListener);
     }
 
-    @Override
-    public void onAttachedToRecyclerView(RecyclerView recyclerView) {
-        super.onAttachedToRecyclerView(recyclerView);
-    }
+   // @Override
+   // public void onAttachedToRecyclerView(RecyclerView recyclerView) {
+   //     super.onAttachedToRecyclerView(recyclerView);
+   // }
 
     @Override
     public int getItemCount() {
@@ -84,9 +76,9 @@ public class DistrictCardAdapter extends RecyclerView.Adapter<DistrictCardViewHo
 
     @Override
     public void onItemDismiss(int position) {
-      //.  mDistrictObjectsList.remove(position);
-      //.  notifyItemRemoved(position);
-      //.  mItemDismissListener.onItemDismissListener();
+        mDistrictObjectsList.remove(position);
+        notifyItemRemoved(position);
+        mItemDismissListener.onItemDismissListener();
     }
 
     @Override
@@ -101,5 +93,6 @@ public class DistrictCardAdapter extends RecyclerView.Adapter<DistrictCardViewHo
     public interface ItemDismissListener {
         void onItemDismissListener();
     }
+
 
 }

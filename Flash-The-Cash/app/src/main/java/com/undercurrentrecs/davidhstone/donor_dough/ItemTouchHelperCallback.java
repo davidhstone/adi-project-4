@@ -1,4 +1,4 @@
-package com.undercurrentrecs.davidhstone.flash_the_cash;
+package com.undercurrentrecs.davidhstone.donor_dough;
 
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
@@ -21,7 +21,7 @@ public class ItemTouchHelperCallback extends ItemTouchHelper.Callback {
 
     @Override
     public int getMovementFlags(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
-        int swipeFlags = ItemTouchHelper.UP | ItemTouchHelper.DOWN;
+        int swipeFlags = ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT;
         //   | ItemTouchHelper.START | ItemTouchHelper.END
         return makeMovementFlags(0, swipeFlags);
     }
@@ -39,9 +39,9 @@ public class ItemTouchHelperCallback extends ItemTouchHelper.Callback {
 
     @Override
     public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
-        if(direction == ItemTouchHelper.UP) {
+        if(direction == ItemTouchHelper.LEFT) {
             mAdapter.onItemDismiss(viewHolder.getAdapterPosition());
-        } else if (direction == ItemTouchHelper.DOWN){
+        } else if (direction == ItemTouchHelper.RIGHT){
             mAdapter.onItemSelect(viewHolder.getAdapterPosition());
         }
     }

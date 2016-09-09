@@ -1,4 +1,4 @@
-package com.undercurrentrecs.davidhstone.flash_the_cash;
+package com.undercurrentrecs.davidhstone.donor_dough;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.MenuItem;
 import android.view.View;
 
@@ -19,9 +20,10 @@ public class DistrictActivity extends AppCompatActivity implements DistrictCardA
     public static final String SELECTED_POSITION = "selected_position";
 
     private RecyclerView mRecyclerView;
-    DistrictCardAdapter mAdapter;
+    private DistrictCardAdapter mAdapter;
     private RecyclerView.Adapter mAdapter123;
     private RecyclerView.LayoutManager mLayoutManager;
+    private ItemTouchHelper mTouchHelper;
     ArrayList<DistrictObject> mArrayList;
 
 
@@ -38,7 +40,7 @@ public class DistrictActivity extends AppCompatActivity implements DistrictCardA
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         mArrayList = new ArrayList<>();
-        mArrayList.add(new DistrictObject("Don Beyer (D)", "VA08", "Top Sector: Agribusiness", "$25,000"));
+        mArrayList.add(new DistrictObject("Pauly McPolitician (D)", "District: VA08", "Top Donor Sector: XYZ", "$25,000"));
         mArrayList.add(new DistrictObject("Don Beyer (D)", "VA08", "Top Sector: Defense", "$23,500"));
         mArrayList.add(new DistrictObject("Don Beyer (D)", "VA08", "Top Sector: Public Unionse", "$21,000"));
         mArrayList.add(new DistrictObject("Vermin Supreme (I)", "US#1", "Top Sector: Ponies", "$4985745,000"));
@@ -60,7 +62,10 @@ public class DistrictActivity extends AppCompatActivity implements DistrictCardA
        // mRecyclerView.setAdapter(new DistrictCardAdapter(districtObjects));
         mRecyclerView.setAdapter(mAdapter);
 
+        //mTouchHelper = new ItemTouchHelper(new ItemTouchHelperCallBack(mAdapter));
+        mTouchHelper = new ItemTouchHelper(new ItemTouchHelperCallback(mAdapter));
 
+        mTouchHelper.attachToRecyclerView(mRecyclerView);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {

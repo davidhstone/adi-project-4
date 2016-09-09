@@ -5,7 +5,7 @@ android {
     buildToolsVersion "24.0.1"
 
     defaultConfig {
-        applicationId "com.undercurrentrecs.davidhstone.flash_the_cash"
+        applicationId "com.undercurrentrecs.davidhstone.donor_dough"
         minSdkVersion 16
         targetSdkVersion 24
         versionCode 1

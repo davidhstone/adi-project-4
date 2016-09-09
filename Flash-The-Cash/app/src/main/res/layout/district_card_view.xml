@@ -8,8 +8,8 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
         android:layout_marginTop="@dimen/activity_vertical_district_recyclerview_top"
+        android:longClickable="true"
 
         card_view:cardCornerRadius="4dp"
         card_view:cardElevation="8dp"

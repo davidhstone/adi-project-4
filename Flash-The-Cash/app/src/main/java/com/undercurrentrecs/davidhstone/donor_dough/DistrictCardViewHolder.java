@@ -1,4 +1,4 @@
-package com.undercurrentrecs.davidhstone.flash_the_cash;
+package com.undercurrentrecs.davidhstone.donor_dough;
 
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
