@@ -10,6 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,10 +22,12 @@ public class DistrictActivity extends AppCompatActivity implements DistrictCardA
 
     private RecyclerView mRecyclerView;
     private DistrictCardAdapter mAdapter;
-    private RecyclerView.Adapter mAdapter123;
+    //private RecyclerView.Adapter mAdapter123;
     private RecyclerView.LayoutManager mLayoutManager;
     private ItemTouchHelper mTouchHelper;
     ArrayList<DistrictObject> mArrayList;
+
+    Button mGetIndustryButton;
 
 
     int onStarted = 0;
@@ -48,6 +51,7 @@ public class DistrictActivity extends AppCompatActivity implements DistrictCardA
         ArrayList<DistrictObject> districtObjects = new ArrayList<>();
         Collections.fill(districtObjects, new DistrictObject());
 
+
         //mAdapter = new DistrictCardAdapter(districtObjects);
         mAdapter = new DistrictCardAdapter(this, mArrayList);
 
@@ -67,6 +71,16 @@ public class DistrictActivity extends AppCompatActivity implements DistrictCardA
 
         mTouchHelper.attachToRecyclerView(mRecyclerView);
 
+        mGetIndustryButton = (Button) findViewById(R.id.get_industry_button);
+        mGetIndustryButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(DistrictActivity.this, DonorDetailActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,7 +94,7 @@ public class DistrictActivity extends AppCompatActivity implements DistrictCardA
 
 
     }
-
+    //FOR NOW THIS IS FINE, BUT I WANT TO SAVE THE RESUOLTS LIKE THIS
     @Override
     public void onItemSelectListener(int position) {
         Intent intent = new Intent(this, DonorDetailActivity.class);

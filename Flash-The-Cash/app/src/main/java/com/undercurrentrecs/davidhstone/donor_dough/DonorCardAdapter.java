@@ -21,8 +21,8 @@ public class DonorCardAdapter extends RecyclerView.Adapter<DonorCardViewHolder>
 
     private ArrayList<DonorObject> mDonorObjectsList;
 
-  //  private ItemSelectListener mItemSelectListener;
-  //  private ItemDismissListener mItemDismissListener;
+    private ItemSelectListener mItemSelectListener;
+    private ItemDismissListener mItemDismissListener;
 
     public DonorCardAdapter(Context c, ArrayList<DonorObject> donorObjectList){
         context = c;
@@ -30,12 +30,13 @@ public class DonorCardAdapter extends RecyclerView.Adapter<DonorCardViewHolder>
     }
 
     @Override
-    public DonorCardViewHolder onCreateViewHolder(ViewGroup parent, int position) {
+    public DonorCardViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-    //    mItemSelectListener = (ItemSelectListener) parent.getContext();
-    //    mItemDismissListener = (ItemDismissListener) parent.getContext();
+        mItemSelectListener = (ItemSelectListener) parent.getContext();
+        mItemDismissListener = (ItemDismissListener) parent.getContext();
 
-        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.donor_detail_card_view, parent, false);
+        LayoutInflater inflater = LayoutInflater.from(parent.getContext());
+        View itemView = inflater.inflate(R.layout.donor_detail_card_view, parent, false);
         DonorCardViewHolder donorViewHolder = new DonorCardViewHolder(itemView);
         return donorViewHolder;
 
@@ -44,8 +45,8 @@ public class DonorCardAdapter extends RecyclerView.Adapter<DonorCardViewHolder>
     @Override
     public void onBindViewHolder(DonorCardViewHolder holder, final int position) {
 
-        holder.mIndustryName.setText(mDonorObjectsList.get(position).mIndustry);
-        holder.mIndustryTopDonor.setText(mDonorObjectsList.get(position).mTopDonorIndustry);
+        holder.mRepName.setText(mDonorObjectsList.get(position).mRepresentative);
+        holder.mTotalIndustryDonations.setText(mDonorObjectsList.get(position).mTopDonorIndustry);
         holder.mTotalIndustryDonations.setText(mDonorObjectsList.get(position).mTotalIndustryDonations);
 
         holder.mDonorShareButton.setOnClickListener(new View.OnClickListener() {
@@ -61,6 +62,7 @@ public class DonorCardAdapter extends RecyclerView.Adapter<DonorCardViewHolder>
 
     }
 
+
     @Override
     public int getItemCount() {
         return mDonorObjectsList.size();
@@ -68,20 +70,16 @@ public class DonorCardAdapter extends RecyclerView.Adapter<DonorCardViewHolder>
 
     @Override
     public void onItemDismiss(int position) {
-        //mDonorObjectsList.remove(position);
-        //notifyItemRemoved(position);
-        //mItemDismissListener.onItemDismissListener();
+        mDonorObjectsList.remove(position);
+        notifyItemRemoved(position);
+        mItemDismissListener.onItemDismissListener();
     }
+
 
     @Override
     public void onItemSelect(int position) {
-
+        mItemSelectListener.onItemSelectListener(position);
     }
-
-    //@Override
-    //public void onItemSelect(int position) {
-    //    mItemSelectListener.onItemSelectListener(position);
-    //}
 
     public interface ItemSelectListener {
         void onItemSelectListener(int position);
