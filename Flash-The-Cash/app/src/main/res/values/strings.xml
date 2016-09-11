@@ -6,4 +6,6 @@
     <string name="title_activity_donor_detail">DonorDetailActivity</string>
 
     <string name="industry_submit_button">Click for top donor industries!</string>
+
+    <string name="open_secrets_api_key">2f3829405045a4eb46786856f65dee7d</string>
 </resources>

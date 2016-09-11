@@ -1,6 +1,9 @@
 package com.undercurrentrecs.davidhstone.donor_dough;
 
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
@@ -8,12 +11,21 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.support.v7.widget.helper.ItemTouchHelper;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
+import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Collections;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class DistrictActivity extends AppCompatActivity implements DistrictCardAdapter.ItemDismissListener, DistrictCardAdapter.ItemSelectListener{
 
@@ -26,6 +38,8 @@ public class DistrictActivity extends AppCompatActivity implements DistrictCardA
     private RecyclerView.LayoutManager mLayoutManager;
     private ItemTouchHelper mTouchHelper;
     ArrayList<DistrictObject> mArrayList;
+
+    WeakReference<Context> mContextReference;
 
     Button mGetIndustryButton;
 
@@ -71,6 +85,7 @@ public class DistrictActivity extends AppCompatActivity implements DistrictCardA
 
         mTouchHelper.attachToRecyclerView(mRecyclerView);
 
+
         mGetIndustryButton = (Button) findViewById(R.id.get_industry_button);
         mGetIndustryButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -94,6 +109,10 @@ public class DistrictActivity extends AppCompatActivity implements DistrictCardA
 
 
     }
+
+
+
+
     //FOR NOW THIS IS FINE, BUT I WANT TO SAVE THE RESUOLTS LIKE THIS
     @Override
     public void onItemSelectListener(int position) {
