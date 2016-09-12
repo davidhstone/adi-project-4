@@ -18,10 +18,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.undercurrentrecs.davidhstone.donor_dough.models.industry.Industry;
 import com.undercurrentrecs.davidhstone.donor_dough.models.industry.IndustryPojo;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -39,7 +42,7 @@ public class DonorDetailActivity extends AppCompatActivity implements DonorCardA
     //private RecyclerView.Adapter mAdapter123;
     private RecyclerView.LayoutManager mLayoutManager;
     private ItemTouchHelper mTouchHelper;
-    ArrayList<DonorObject> mDonorList;
+    private ArrayList<DonorObject> mIndustryList;
     private String mCid;
 
     int onStarted = 0;
@@ -73,8 +76,8 @@ public class DonorDetailActivity extends AppCompatActivity implements DonorCardA
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(DonorDetailActivity.this));
 
-        mDonorList = new ArrayList<>();
-        mAdapter = new DonorCardAdapter(this, mDonorList);
+        mIndustryList = new ArrayList<>();
+        //mAdapter = new DonorCardAdapter(this, mDonorList);
 
         mRecyclerView.setAdapter(mAdapter);
 
@@ -135,27 +138,35 @@ public class DonorDetailActivity extends AppCompatActivity implements DonorCardA
 
                         String representative = response.body().getResponse().getIndustries().getAttributes().getCandName();
 
+                      //  List = response.body().getResponse().getIndustries().getIndustry();
 
-                        String industry = response.body().getResponse().getIndustries().getIndustry().get(0).getAttributes().getIndustryName();
-                        String totalDonations = response.body().getResponse().getIndustries().getIndustry().get(0).getAttributes().getTotal();
-                        String pACDonations = response.body().getResponse().getIndustries().getIndustry().get(0).getAttributes().getPacs();
-                        String individualDonations = response.body().getResponse().getIndustries().getIndustry().get(0).getAttributes().getIndivs();
+                        //for(Industry industry : response.body().getResponse().getIndustries().getIndustry().get().getAttributes()) {
+                        //    mIndustryList.add(industry);
+                        //}
 
-                        DonorObject donorObject = new DonorObject();
-                        donorObject.setmRepresentative(representative);
-                        donorObject.setmTopDonorIndustry(industry);
-                        donorObject.setmTotalIndustryDonations(totalDonations);
-                        donorObject.setmPACDonations(pACDonations);
-                        donorObject.setmIndividualDonations(individualDonations);
+                        for (int i = 0; i <= 9; i++) {
+
+                            String industry = response.body().getResponse().getIndustries().getIndustry().get(i).getAttributes().getIndustryName();
+                            String totalDonations = response.body().getResponse().getIndustries().getIndustry().get(i).getAttributes().getTotal();
+                            String pACDonations = response.body().getResponse().getIndustries().getIndustry().get(i).getAttributes().getPacs();
+                            String individualDonations = response.body().getResponse().getIndustries().getIndustry().get(i).getAttributes().getIndivs();
+
+                            DonorObject donorObject = new DonorObject();
+                            donorObject.setmRepresentative(representative);
+                            donorObject.setmTopDonorIndustry(industry);
+                            donorObject.setmTotalIndustryDonations(totalDonations);
+                            donorObject.setmPACDonations(pACDonations);
+                            donorObject.setmIndividualDonations(individualDonations);
 
 
-                        Log.d("donor mRep: ", representative);
-                        Log.d("donor industry: ", industry);
+                            Log.d("donor mRep: ", representative);
+                            Log.d("donor industry: ", industry);
+                            //Log.v(ArrayList.toString(mDonorList));
 
-                        mDonorList.clear();
-                      //  mDonorList.add();
+                            // mDonorList.clear();
+                            //  mDonorList.add();
 
-
+                        }
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
