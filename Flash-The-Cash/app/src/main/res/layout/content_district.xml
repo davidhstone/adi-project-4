@@ -66,7 +66,7 @@
         android:text="@string/industry_submit_button"
         android:layout_centerHorizontal="true"
         android:backgroundTint="@color/colorAccent"
-        android:layout_above="@+id/district_street_address_edittext"/>
+        android:layout_marginTop="350dp"/>
 
     <EditText
         android:id="@+id/district_street_address_edittext"
@@ -76,9 +76,10 @@
         android:layout_centerHorizontal="true"
         android:textAlignment="center"
         android:hint="enter new street address here"
+        android:imeOptions="actionDone"
+        android:singleLine="true"
         android:paddingTop="8dp"
-
-        android:layout_above="@+id/district_zipcode_edittext"
+        android:layout_below="@id/get_industry_button"
         />
 
     <EditText
@@ -88,10 +89,11 @@
         android:textSize="16dp"
         android:layout_centerHorizontal="true"
         android:textAlignment="center"
-        android:hint="enter new zipcode here"
-        android:paddingTop="8dp"
-
-        android:layout_above="@+id/district_click_button_textview"
+        android:hint="enter new zip code here"
+        android:imeOptions="actionDone"
+        android:singleLine="true"
+        android:paddingTop="0dp"
+        android:layout_below="@id/district_street_address_edittext"
         />
 
     <TextView
@@ -99,8 +101,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="click the $ button to see another district's info"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="@dimen/activity_vertical_margin_bottom"
+        android:layout_below="@+id/district_zipcode_edittext"
+
         android:textAlignment="center"
         android:textSize="16dp"
         />

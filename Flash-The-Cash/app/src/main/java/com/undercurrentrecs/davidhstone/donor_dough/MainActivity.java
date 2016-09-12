@@ -33,7 +33,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     private static String geoCoderBaseUrl = "https://usgeocoder.com/";
-    private static String geoCoderAPIKey = "bee6806f18ffe3624349d1bb1beb1cd2";
+    public static String geoCoderAPIKey = "bee6806f18ffe3624349d1bb1beb1cd2";
     private static final String geoCoderURL = "https://usgeocoder.com/api/get_info.php?address=3017%20Rosemary%20Ln%20&zipcode=22042&authkey=bee6806f18ffe3624349d1bb1beb1cd2";
 
     private static String mGeoCoderURL_ADDRESS;
@@ -77,8 +77,8 @@ public class MainActivity extends AppCompatActivity {
                     Log.d("URL_ADDRESS", geoCoderURL);
 
                 mDistrictInfotask = new DownloadTask();
-                //mDistrictInfotask.execute(mGeoCoderURL_ADDRESS);
                 mDistrictInfotask.execute(geoCoderURL);
+                //mDistrictInfotask.execute(geoCoderURL);
 
             }
         });
@@ -148,7 +148,7 @@ public class MainActivity extends AppCompatActivity {
         return sb.toString();
     }
 
-    private class DownloadTask extends AsyncTask<String, Void, String> {
+    public class DownloadTask extends AsyncTask<String, Void, String> {
         @Override
         protected String doInBackground(String... urls) {
             String representativeName = "";

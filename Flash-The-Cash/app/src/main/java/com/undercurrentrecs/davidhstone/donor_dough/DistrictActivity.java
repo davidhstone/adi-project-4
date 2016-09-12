@@ -33,6 +33,9 @@ public class DistrictActivity extends AppCompatActivity implements DistrictCardA
     private static final String TAG = "MainActivity";
     public static final String SELECTED_POSITION = "selected_position";
 
+    private EditText mStreetAddressEntry;
+    private EditText mZipcodeEntry;
+
     //private DownloadTask mDistrictInfotask;
 
     private RecyclerView mRecyclerView;
@@ -109,13 +112,35 @@ public class DistrictActivity extends AppCompatActivity implements DistrictCardA
             }
         });
 
+
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(DistrictActivity.this, DistrictActivity.class);
-                startActivity(intent);
-                finish();
+                //Intent intent = new Intent(DistrictActivity.this, DistrictActivity.class);
+                //startActivity(intent);
+                //finish();
+
+                mStreetAddressEntry = (EditText) findViewById(R.id.district_street_address_edittext);
+                String rawAddressString = mStreetAddressEntry.getText().toString();
+                rawAddressString += " ";
+                String encodedAddressString = rawAddressString.replaceAll(" ", "%20");
+                mZipcodeEntry = (EditText) findViewById(R.id.district_zipcode_edittext);
+                String zipcodeString = mZipcodeEntry.getText().toString();
+
+                mGeoCoderURL_ADDRESS = "https://usgeocoder.com/api/get_info.php?address=" + encodedAddressString +
+                        "&zipcode=" + zipcodeString + "&authkey=" + MainActivity.geoCoderAPIKey;
+
+                // geoCoderURLAddress = mGeoCoderURL_ADDRESS;
+
+                Log.d("mURL_ADDRESS", mGeoCoderURL_ADDRESS);
+                Log.d("URL_ADDRESS", geoCoderURL);
+
+
+
+                //mDistrictInfotask = new MainActivity.DownloadTask();
+                //mDistrictInfotask.execute(mGeoCoderURL_ADDRESS);
 
             }
         });
