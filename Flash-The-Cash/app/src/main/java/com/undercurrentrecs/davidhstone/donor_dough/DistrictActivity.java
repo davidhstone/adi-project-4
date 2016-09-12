@@ -66,7 +66,7 @@ public class DistrictActivity extends AppCompatActivity implements DistrictCardA
 
         Log.d("intent repName: ", representative);
 
-        getCid(representative);
+        getNewName(representative);
 
         ConnectivityManager connMgr = (ConnectivityManager)
                 getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -149,7 +149,7 @@ public class DistrictActivity extends AppCompatActivity implements DistrictCardA
 
     }
 
-    public String getCid (String representative) {
+    public String getNewName (String representative) {
 
         Log.d("starting repName: ", representative);
 
