@@ -66,6 +66,8 @@ public class DistrictActivity extends AppCompatActivity implements DistrictCardA
 
         Log.d("intent repName: ", representative);
 
+        getCid(representative);
+
         ConnectivityManager connMgr = (ConnectivityManager)
                 getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
@@ -145,9 +147,38 @@ public class DistrictActivity extends AppCompatActivity implements DistrictCardA
             }
         });
 
-
     }
 
+    public String getCid (String representative) {
+
+        Log.d("starting repName: ", representative);
+
+        String name = "Don Beyer (D)";
+
+        int start = name.indexOf(' ');
+        int end = name.lastIndexOf(' ');
+
+        String firstName = "";
+        String lastName = "";
+        String partyName = "";
+
+        if (start >= 0) {
+            firstName = name.substring(0, start);
+            if (end > start)
+                lastName = name.substring(start + 1, end);
+            partyName = name.substring(end + 1, name.length());
+        }
+
+        System.out.println(firstName);
+        System.out.println(lastName);
+        System.out.println(partyName);
+
+        String newName = lastName + ", " + firstName;
+
+        System.out.println(newName);
+
+        return newName;
+    }
 
 
 
