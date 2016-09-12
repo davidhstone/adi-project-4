@@ -32,17 +32,19 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class DonorDetailActivity extends AppCompatActivity implements DonorCardAdapter.ItemDismissListener, DonorCardAdapter.ItemSelectListener{
 
     private static String baseUrl = "http://www.opensecrets.org/";
+    private static String openSecAPIKey = "2f3829405045a4eb46786856f65dee7d";
 
     private RecyclerView mRecyclerView;
     private DonorCardAdapter mAdapter;
     //private RecyclerView.Adapter mAdapter123;
     private RecyclerView.LayoutManager mLayoutManager;
     private ItemTouchHelper mTouchHelper;
-    ArrayList<DonorObject> mArrayList;
+    ArrayList<DonorObject> mDonorList;
+    private String mCid;
 
     int onStarted = 0;
 
-    String candID;
+    //String cid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,28 +56,29 @@ public class DonorDetailActivity extends AppCompatActivity implements DonorCardA
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
-        mArrayList = new ArrayList<>();
-        mArrayList.add(new DonorObject("Pauly McPolitician (D)", "Defense", "348795", "$25,000", "83475983"));
-        mArrayList.add(new DonorObject("Don Beyer (D)", "Defense", "348795", "$25,000", "83475983"));
-        mArrayList.add(new DonorObject("Don Beyer (D)", "Defense", "348795", "$25,000", "83475983"));
-        mArrayList.add(new DonorObject("Vermin Supreme (I)", "URANUS 5", "348795", "$25,000", "83475983"));
+       // mArrayList = new ArrayList<>();
+       // mArrayList.add(new DonorObject("Pauly McPolitician (D)", "Defense", "348795", "$25,000", "83475983"));
+       // mArrayList.add(new DonorObject("Don Beyer (D)", "Defense", "348795", "$25,000", "83475983"));
+       // mArrayList.add(new DonorObject("Don Beyer (D)", "Defense", "348795", "$25,000", "83475983"));
+       // mArrayList.add(new DonorObject("Vermin Supreme (I)", "URANUS 5", "348795", "$25,000", "83475983"));
 
-        ArrayList<DonorObject> donorObjects = new ArrayList<>();
-        Collections.fill(donorObjects, new DonorObject());
+       // ArrayList<DonorObject> donorObjects = new ArrayList<>();
+       // Collections.fill(donorObjects, new DonorObject());
         //mArrayList = donorObjects;
 
         //mAdapter = new DonorCardAdapter(this, donorObjects);
-        mAdapter = new DonorCardAdapter(this, mArrayList);
-
+        //mAdapter = new DonorCardAdapter(this, mArrayList);
 
         mRecyclerView = (RecyclerView) findViewById(R.id.donor_recycler_view);
         mRecyclerView.setHasFixedSize(true);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(DonorDetailActivity.this));
 
-        mLayoutManager = new LinearLayoutManager(this);
-        mRecyclerView.setLayoutManager(mLayoutManager);
+        mDonorList = new ArrayList<>();
+        mAdapter = new DonorCardAdapter(this, mDonorList);
+
+        mRecyclerView.setAdapter(mAdapter);
 
         //mRecyclerView.setAdapter(new DonorCardAdapter(this, donorObjects));
-        mRecyclerView.setAdapter(mAdapter);
 
         //mTouchHelper = new ItemTouchHelper(new ItemTouchHelperCallBack(mAdapter));
         mTouchHelper = new ItemTouchHelper(new ItemTouchHelperCallback(mAdapter));
@@ -83,8 +86,8 @@ public class DonorDetailActivity extends AppCompatActivity implements DonorCardA
         mTouchHelper.attachToRecyclerView(mRecyclerView);
 
 
-        String candID = "N00036018";
-        getIndustryInfo(candID);
+        mCid = "N00036018";
+        getIndustryInfo(mCid);
 
 
         //FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -98,9 +101,9 @@ public class DonorDetailActivity extends AppCompatActivity implements DonorCardA
 
     }
 
-    protected void getIndustryInfo(String candID) {
+    protected void getIndustryInfo(final String mCid) {
         Log.d("DonorDetailActivity: ", "getting opensectrets info");
-        Log.d("candID: ", candID);
+        Log.d("cid: ", mCid);
 
         ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
@@ -113,15 +116,45 @@ public class DonorDetailActivity extends AppCompatActivity implements DonorCardA
 
             OpenSecretsIndustryService service = retrofit.create(OpenSecretsIndustryService.class);
 
-            Call<IndustryPojo> call = service.getResponse(candID);
+            Call<IndustryPojo> call = service.getResponse(mCid);
 
             call.enqueue(new Callback<IndustryPojo>() {
 
                 @Override
                 public void onResponse(Call<IndustryPojo> call, Response<IndustryPojo> response) {
 
+                    Log.d("call: ", call.request().toString());
+                    Log.d("onResponse cid: ", mCid);
+                    Log.d("donorObject: ", response.body().getResponse().getIndustries().toString());
+
+
+
                     try {
+
                         Toast.makeText(DonorDetailActivity.this, "Your API call worked!", Toast.LENGTH_LONG).show();
+
+                        String representative = response.body().getResponse().getIndustries().getAttributes().getCandName();
+
+
+                        String industry = response.body().getResponse().getIndustries().getIndustry().get(0).getAttributes().getIndustryName();
+                        String totalDonations = response.body().getResponse().getIndustries().getIndustry().get(0).getAttributes().getTotal();
+                        String pACDonations = response.body().getResponse().getIndustries().getIndustry().get(0).getAttributes().getPacs();
+                        String individualDonations = response.body().getResponse().getIndustries().getIndustry().get(0).getAttributes().getIndivs();
+
+                        DonorObject donorObject = new DonorObject();
+                        donorObject.setmRepresentative(representative);
+                        donorObject.setmTopDonorIndustry(industry);
+                        donorObject.setmTotalIndustryDonations(totalDonations);
+                        donorObject.setmPACDonations(pACDonations);
+                        donorObject.setmIndividualDonations(individualDonations);
+
+
+                        Log.d("donor mRep: ", representative);
+                        Log.d("donor industry: ", industry);
+
+                        mDonorList.clear();
+                      //  mDonorList.add();
+
 
                     } catch (Exception e) {
                         e.printStackTrace();

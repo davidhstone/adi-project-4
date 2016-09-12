@@ -32,14 +32,14 @@ public class DonorObject {
         mIndividualDonations = individualDonations;
     }
 
-    private ArrayList<DonorObject> donorObjects;
-
-    private void initializeDonor() {
-
-        donorObjects = new ArrayList<>();
-        donorObjects.add(new DonorObject("A", "B", "98745", "943875", "987435"));
-        donorObjects.add(new DonorObject("B", "C", "98745", "943875", "987435"));
-    }
+   // private ArrayList<DonorObject> donorObjects;
+//
+   // private void initializeDonor() {
+//
+   //     donorObjects = new ArrayList<>();
+   //     donorObjects.add(new DonorObject("A", "B", "98745", "943875", "987435"));
+   //     donorObjects.add(new DonorObject("B", "C", "98745", "943875", "987435"));
+   // }
 
     public String getmRepresentative() {
         return mRepresentative;
@@ -82,11 +82,11 @@ public class DonorObject {
         this.mIndividualDonations = mIndividualDonations;
     }
 
-    public ArrayList<DonorObject> getDonorObjects() {
-        return donorObjects;
-    }
-
-    public void setDonorObjects(ArrayList<DonorObject> donorObjects) {
-        this.donorObjects = donorObjects;
-    }
+  //  public ArrayList<DonorObject> getDonorObjects() {
+  //      return donorObjects;
+  //  }
+//
+  //  public void setDonorObjects(ArrayList<DonorObject> donorObjects) {
+  //      this.donorObjects = donorObjects;
+  //  }
 }

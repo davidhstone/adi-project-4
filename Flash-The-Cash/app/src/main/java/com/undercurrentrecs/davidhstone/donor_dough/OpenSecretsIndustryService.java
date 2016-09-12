@@ -13,8 +13,8 @@ import retrofit2.http.Query;
 
 public interface OpenSecretsIndustryService {
 
-    @GET("api/?method=candIndustry&cycle=2016&output=json&apikey=" + R.string.open_secrets_api_key)
+    @GET("api/?method=candIndustry&cycle=2016&output=json&apikey=2f3829405045a4eb46786856f65dee7d")
     //@GET("api/?method=candIndustry&cycle=2016&output=json&apikey=" + R.string.open_secrets_api_key)
-    Call<IndustryPojo> getResponse(@Query("candID") String candID);
+    Call<IndustryPojo> getResponse(@Query("cid") String cid);
 
 }
