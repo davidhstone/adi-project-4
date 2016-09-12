@@ -170,6 +170,10 @@ public class MainActivity extends AppCompatActivity {
 
            // mRepNameTextView.setText(representativeName);
             Log.d("representative_1", representativeName);
+
+            Intent intent = new Intent(MainActivity.this, DistrictActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
         }
     }
 
