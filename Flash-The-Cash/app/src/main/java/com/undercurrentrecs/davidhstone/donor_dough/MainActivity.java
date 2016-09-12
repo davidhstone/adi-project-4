@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
                     Log.d("URL_ADDRESS", geoCoderURL);
 
                 mDistrictInfotask = new DownloadTask();
-                mDistrictInfotask.execute(geoCoderURL);
+                mDistrictInfotask.execute(mGeoCoderURL_ADDRESS);
 
             }
         });
