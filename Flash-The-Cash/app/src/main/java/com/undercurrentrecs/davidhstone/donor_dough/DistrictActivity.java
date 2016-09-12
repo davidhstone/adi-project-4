@@ -59,6 +59,10 @@ public class DistrictActivity extends AppCompatActivity implements DistrictCardA
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
+        String representative = getIntent().getExtras().getString("representative");
+
+        Log.d("intent repName: ", representative);
+
         ConnectivityManager connMgr = (ConnectivityManager)
                 getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();

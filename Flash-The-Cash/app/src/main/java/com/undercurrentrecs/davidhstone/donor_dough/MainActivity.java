@@ -77,7 +77,8 @@ public class MainActivity extends AppCompatActivity {
                     Log.d("URL_ADDRESS", geoCoderURL);
 
                 mDistrictInfotask = new DownloadTask();
-                mDistrictInfotask.execute(mGeoCoderURL_ADDRESS);
+                //mDistrictInfotask.execute(mGeoCoderURL_ADDRESS);
+                mDistrictInfotask.execute(geoCoderURL);
 
             }
         });
@@ -173,6 +174,7 @@ public class MainActivity extends AppCompatActivity {
 
             Intent intent = new Intent(MainActivity.this, DistrictActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.putExtra("representative", representativeName);
             startActivity(intent);
         }
     }
