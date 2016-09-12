@@ -25,6 +25,8 @@
         android:layout_centerHorizontal="true"
         android:textAlignment="center"
         android:hint="enter street address here"
+        android:imeOptions="actionDone"
+        android:singleLine="true"
         android:paddingTop="8dp"
         android:layout_below="@+id/flag_dollar_capitol_pic" />
 
@@ -36,6 +38,8 @@
         android:layout_centerHorizontal="true"
         android:textAlignment="center"
         android:hint="enter zip code here"
+        android:imeOptions="actionDone"
+        android:singleLine="true"
         android:paddingTop="0dp"
         android:layout_below="@+id/street_address_edittext" />
 

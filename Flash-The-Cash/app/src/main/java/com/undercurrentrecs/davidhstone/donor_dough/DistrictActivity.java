@@ -15,22 +15,25 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Collections;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
-
 public class DistrictActivity extends AppCompatActivity implements DistrictCardAdapter.ItemDismissListener, DistrictCardAdapter.ItemSelectListener{
+
+    //private static String geoCoderBaseUrl = "https://usgeocoder.com/";
+    //private static String geoCoderAPIKey = "bee6806f18ffe3624349d1bb1beb1cd2";
+    private static final String geoCoderURL = "https://usgeocoder.com/api/get_info.php?address=3017%20Rosemary%20Ln%20&zipcode=22042&authkey=bee6806f18ffe3624349d1bb1beb1cd2";
+
+    private static String mGeoCoderURL_ADDRESS;
 
     private static final String TAG = "MainActivity";
     public static final String SELECTED_POSITION = "selected_position";
+
+    //private DownloadTask mDistrictInfotask;
 
     private RecyclerView mRecyclerView;
     private DistrictCardAdapter mAdapter;
@@ -55,6 +58,12 @@ public class DistrictActivity extends AppCompatActivity implements DistrictCardA
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
+
+        ConnectivityManager connMgr = (ConnectivityManager)
+                getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
+
+
 
         mArrayList = new ArrayList<>();
         mArrayList.add(new DistrictObject("Pauly McPolitician (D)", "District: VA08", "Top Donor Sector: XYZ", "$25,000"));
@@ -90,7 +99,7 @@ public class DistrictActivity extends AppCompatActivity implements DistrictCardA
         mGetIndustryButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(DistrictActivity.this, DonorDetailActivity.class);
+                Intent intent = new Intent(DistrictActivity.this, IndustryActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -116,7 +125,7 @@ public class DistrictActivity extends AppCompatActivity implements DistrictCardA
     //FOR NOW THIS IS FINE, BUT I WANT TO SAVE THE RESUOLTS LIKE THIS
     @Override
     public void onItemSelectListener(int position) {
-        Intent intent = new Intent(this, DonorDetailActivity.class);
+        Intent intent = new Intent(this, IndustryActivity.class);
         intent.putExtra(SELECTED_POSITION, position);
         startActivity(intent);
     }

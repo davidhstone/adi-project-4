@@ -24,9 +24,9 @@ public class DonorCardAdapter extends RecyclerView.Adapter<DonorCardViewHolder>
     private ItemSelectListener mItemSelectListener;
     private ItemDismissListener mItemDismissListener;
 
-    public DonorCardAdapter(Context c, ArrayList<DonorObject> donorObjectList){
+    public DonorCardAdapter(Context c, ArrayList<DonorObject> industryList){
         context = c;
-        mDonorObjectsList = donorObjectList;
+        mDonorObjectsList = industryList;
     }
 
     @Override
@@ -46,8 +46,11 @@ public class DonorCardAdapter extends RecyclerView.Adapter<DonorCardViewHolder>
     public void onBindViewHolder(DonorCardViewHolder holder, final int position) {
 
         holder.mRepName.setText(mDonorObjectsList.get(position).mRepresentative);
-        holder.mTotalIndustryDonations.setText(mDonorObjectsList.get(position).mTopDonorIndustry);
-        holder.mTotalIndustryDonations.setText(mDonorObjectsList.get(position).mTotalIndustryDonations);
+        holder.mTopDonorIndustry.setText("Industry: " + mDonorObjectsList.get(position).mTopDonorIndustry);
+        holder.mTotalIndustryDonations.setText("Total Donations: $" + mDonorObjectsList.get(position).mTotalIndustryDonations);
+        holder.mPACDonations.setText("PAC Donations: $" + mDonorObjectsList.get(position).mPACDonations);
+        holder.mIndividualDonations.setText("Indiv. Donations" + mDonorObjectsList.get(position).mIndividualDonations);
+
 
         holder.mDonorShareButton.setOnClickListener(new View.OnClickListener() {
             @Override

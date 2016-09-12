@@ -33,7 +33,7 @@
                 android:value="com.undercurrentrecs.davidhstone.donor_dough.MainActivity" />
         </activity>
         <activity
-            android:name="com.undercurrentrecs.davidhstone.donor_dough.DonorDetailActivity"
+            android:name=".IndustryActivity"
             android:label="@string/title_activity_donor_detail"
             android:parentActivityName="com.undercurrentrecs.davidhstone.donor_dough.MainActivity"
             android:screenOrientation="portrait"

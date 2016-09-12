@@ -1,12 +1,9 @@
 package com.undercurrentrecs.davidhstone.donor_dough;
 
 import android.content.Context;
-import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -15,16 +12,11 @@ import android.support.v7.widget.Toolbar;
 import android.support.v7.widget.helper.ItemTouchHelper;
 import android.util.Log;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Toast;
 
-import com.undercurrentrecs.davidhstone.donor_dough.models.industry.Industry;
 import com.undercurrentrecs.davidhstone.donor_dough.models.industry.IndustryPojo;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -32,7 +24,8 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class DonorDetailActivity extends AppCompatActivity implements DonorCardAdapter.ItemDismissListener, DonorCardAdapter.ItemSelectListener{
+public class IndustryActivity extends AppCompatActivity implements DonorCardAdapter.ItemDismissListener, DonorCardAdapter.ItemSelectListener{
+
 
     private static String baseUrl = "http://www.opensecrets.org/";
     private static String openSecAPIKey = "2f3829405045a4eb46786856f65dee7d";
@@ -74,12 +67,12 @@ public class DonorDetailActivity extends AppCompatActivity implements DonorCardA
 
         mRecyclerView = (RecyclerView) findViewById(R.id.donor_recycler_view);
         mRecyclerView.setHasFixedSize(true);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(DonorDetailActivity.this));
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(IndustryActivity.this));
 
-        mIndustryList = new ArrayList<>();
+        mIndustryList = new ArrayList<DonorObject>();
         //mAdapter = new DonorCardAdapter(this, mDonorList);
 
-        mRecyclerView.setAdapter(mAdapter);
+        //mRecyclerView.setAdapter(mAdapter);
 
         //mRecyclerView.setAdapter(new DonorCardAdapter(this, donorObjects));
 
@@ -105,7 +98,7 @@ public class DonorDetailActivity extends AppCompatActivity implements DonorCardA
     }
 
     protected void getIndustryInfo(final String mCid) {
-        Log.d("DonorDetailActivity: ", "getting opensectrets info");
+        Log.d("IndustryActivity: ", "getting opensectrets info");
         Log.d("cid: ", mCid);
 
         ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -134,7 +127,7 @@ public class DonorDetailActivity extends AppCompatActivity implements DonorCardA
 
                     try {
 
-                        Toast.makeText(DonorDetailActivity.this, "Your API call worked!", Toast.LENGTH_LONG).show();
+                       // Toast.makeText(IndustryActivity.this, "Your API call worked!", Toast.LENGTH_LONG).show();
 
                         String representative = response.body().getResponse().getIndustries().getAttributes().getCandName();
 
@@ -161,10 +154,17 @@ public class DonorDetailActivity extends AppCompatActivity implements DonorCardA
 
                             Log.d("donor mRep: ", representative);
                             Log.d("donor industry: ", industry);
+                            Log.d("total donations: ", totalDonations);
+                            Log.d("PAC donations: ", pACDonations);
+                            Log.d("individual donations: ", individualDonations);
                             //Log.v(ArrayList.toString(mDonorList));
 
-                            // mDonorList.clear();
-                            //  mDonorList.add();
+
+                            mIndustryList.add(donorObject);
+
+                            mAdapter = new DonorCardAdapter(IndustryActivity.this, mIndustryList);
+
+                            mRecyclerView.setAdapter(mAdapter);
 
                         }
                     } catch (Exception e) {
@@ -178,13 +178,13 @@ public class DonorDetailActivity extends AppCompatActivity implements DonorCardA
             });
 
         } else {
-            Toast.makeText(DonorDetailActivity.this, "No network connection", Toast.LENGTH_LONG).show();
+            Toast.makeText(IndustryActivity.this, "No network connection", Toast.LENGTH_LONG).show();
         }
     }
 
     @Override
     public void onItemSelectListener(int position) {
-      //  Intent intent = new Intent(this, DonorDetailActivity.class);
+      //  Intent intent = new Intent(this, IndustryActivity.class);
       //  intent.putExtra(SELECTED_POSITION, position);
       //  startActivity(intent);
     }
