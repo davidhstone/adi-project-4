@@ -2,6 +2,7 @@ package com.undercurrentrecs.davidhstone.donor_dough;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.AssetManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -18,9 +19,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.io.IOException;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
+
 
 public class DistrictActivity extends AppCompatActivity implements DistrictCardAdapter.ItemDismissListener, DistrictCardAdapter.ItemSelectListener{
 
@@ -67,6 +71,7 @@ public class DistrictActivity extends AppCompatActivity implements DistrictCardA
         Log.d("intent repName: ", representative);
 
         getNewName(representative);
+       // read();
 
         ConnectivityManager connMgr = (ConnectivityManager)
                 getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -138,8 +143,6 @@ public class DistrictActivity extends AppCompatActivity implements DistrictCardA
 
                 Log.d("mURL_ADDRESS", mGeoCoderURL_ADDRESS);
                 Log.d("URL_ADDRESS", geoCoderURL);
-
-
 
                 //mDistrictInfotask = new MainActivity.DownloadTask();
                 //mDistrictInfotask.execute(mGeoCoderURL_ADDRESS);
