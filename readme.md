@@ -1,6 +1,6 @@
 DONOR DOUGH (formerly Flash the Cash)
 
-Google Playstore URL - <a href="com.undercurrentrecs.davidhstone.donor_dough">Donor Dough</a>
+Google Playstore URL - <a href="https://play.google.com/apps/testing/com.undercurrentrecs.davidhstone.donor_dough">Donor Dough - alpha testing release</a>
 
 
 com.undercurrentrecs.davidhstone.donor_dough
