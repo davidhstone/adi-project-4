@@ -1,4 +1,6 @@
-Flash The Cash (working app name, I'm not too happy with it)
+DONOR DOUGH (formerly Flash the Cash)
+
+Google Playstore URL - com.undercurrentrecs.davidhstone.donor_dough
 
 
 Here's a screenshot on the top sector donors page
